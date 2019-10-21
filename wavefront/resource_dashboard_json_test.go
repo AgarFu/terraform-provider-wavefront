@@ -187,7 +187,8 @@ resource "wavefront_dashboard_json" "test_dashboard_json" {
                   "query": "ts()",
                   "scatterPlotSource": "Y",
                   "querybuilderEnabled": false,
-                  "sourceDescription": ""
+                  "sourceDescription": "",
+                  "secondaryAsis": true
                 }
               ],
               "units": "someunit",

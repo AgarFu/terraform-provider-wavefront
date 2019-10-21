@@ -59,7 +59,8 @@ resource "wavefront_dashboard_json" "json_foobar" {
                   "query": "ts()",
                   "scatterPlotSource": "Y",
                   "querybuilderEnabled": false,
-                  "sourceDescription": ""
+                  "sourceDescription": "",
+                  "secondaryAxis": false
                 }
               ],
               "units": "someunit",

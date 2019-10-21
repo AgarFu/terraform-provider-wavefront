@@ -47,6 +47,11 @@ func resourceDashboard() *schema.Resource {
 					Optional:    true,
 					Description: "Description of the source",
 				},
+				"secondary_axis": {
+					Type:        schema.TypeBool,
+					Optional:    true,
+					Description: "Determines if this source relates to the right hand Y-axis or not",
+				},
 			},
 		},
 	}
@@ -630,6 +635,7 @@ func buildTerraformSource(wavefrontSource wavefront.Source) map[string]interface
 	source["scatter_plot_source"] = wavefrontSource.ScatterPlotSource
 	source["query_builder_enabled"] = wavefrontSource.QuerybuilderEnabled
 	source["source_description"] = wavefrontSource.SourceDescription
+	source["secondary_axis"] = wavefrontSource.SecondaryAxis
 
 	return source
 }
@@ -910,6 +916,9 @@ func buildSources(terraformSources *[]interface{}) *[]wavefront.Source {
 		}
 		if t["source_description"] != nil {
 			wavefrontSources[i].SourceDescription = t["source_description"].(string)
+		}
+		if t["secondary_axis"] != nil {
+			wavefrontSources[i].SecondaryAxis = t["secondary_axis"].(bool)
 		}
 	}
 

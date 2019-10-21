@@ -1,3 +1,7 @@
+## [v2.2.0] - 2019-10-21
+
+*Add support for secondaryAxis*
+
 ## [v2.1.0] - 2019-07-03
 
 *Add support for Threshold Alerts*
